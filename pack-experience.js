@@ -9,7 +9,7 @@
   const turner = find('.experience-turner'), back = find('.experience-back'), front = find('.experience-front');
   const stack = find('.experience-stack'), complete = find('.experience-complete');
   const action = find('#pack-action'), title = find('#pack-title'), count = find('#pack-count'), hint = find('#pack-instruction');
-  const artwork = document.querySelector('.hero .ticket').innerHTML;
+  const artwork = document.querySelector('#ticket-artwork').innerHTML;
   const samples = [1, 0, 3, 1, 5];
   const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
   const clamp = value => Math.max(0, Math.min(1, value));
@@ -74,6 +74,7 @@
     count.textContent = `${index + 1} / 5`; title.textContent = 'この1枚を、めくろう。';
     ticket.setAttribute('aria-label', `${index + 1}枚目のチケットをめくる`);
     controls('タップでめくる', 'チケットを上になぞって、1枚ずつ ↑');
+    ticket.focus({preventScroll:true});
   }
   function launch(button) {
     opener = button; session++; index = 0; gesture = null;
@@ -83,6 +84,7 @@
     title.textContent = '上端を、右になぞって。'; count.textContent = 'TRY THE DAILY PACK';
     controls('タップで開ける', '上の切り口を左から右へスワイプ →');
     if (!dialog.open) dialog.showModal(); fit();
+    pack.focus({preventScroll:true});
     if (!reduced()) packWrap.animate([{opacity:0,transform:'translateY(70px) scale(.82)'},{opacity:1,transform:'translateY(0) scale(1)'}],{duration:550,easing:'cubic-bezier(.16,1,.3,1)'});
   }
   async function openPack() {
@@ -112,6 +114,7 @@
     const next = index === 4 ? '開封を終える' : '次のチケットへ';
     ticket.setAttribute('aria-label', `${result}。サンプルです。${next}`);
     controls(next, `${result} · サンプル`);
+    ticket.focus({preventScroll:true});
   }
   async function next() {
     if (phase !== 'face') return;
@@ -169,5 +172,6 @@
   dialog.addEventListener('close', () => {
     session++; gesture = null; setPhase('closed');
     dialog.getAnimations({subtree:true}).forEach(animation => animation.cancel());
+    opener?.focus({preventScroll:true});
   });
 })();

@@ -1,0 +1,44 @@
+.howto-story{position:relative;container-type:inline-size;background:#fff;color:#191d21}
+.ht-stage{background:#fff;overflow:hidden}
+.ht-title{padding:22px 20px 12px;background:#fff;text-align:center}
+.ht-title .ht-eyebrow{font-family:Arial,sans-serif;color:var(--orange);font-size:15px;font-weight:800;letter-spacing:.01em;line-height:normal;margin:0 0 7px}
+.ht-title h2{font-size:clamp(25px,7.3cqw,31px);font-weight:800;letter-spacing:-.065em;line-height:1.4;margin:0}
+.ht-motion{display:none}
+.ht-viewport{position:relative;height:min(120cqw,calc(100svh - 320px));min-height:320px;max-height:500px;overflow:hidden;isolation:isolate;background:#fff}
+.ht-backdrop{position:absolute;inset:0;background:var(--orange);opacity:0;transition:opacity 460ms cubic-bezier(.22,1,.36,1)}
+.ht-stage.is-orange .ht-backdrop{opacity:1}
+.ht-copy{position:absolute;left:20px;right:20px;top:22px;z-index:2;text-align:center;pointer-events:none}
+.ht-number{display:block;font-family:Arial,sans-serif;font-size:17px;font-weight:800;line-height:1;margin-bottom:10px;color:var(--orange)}
+.ht-light .ht-copy,.ht-copy.ht-light{color:#fff}
+.ht-light .ht-number{color:#fff}
+.ht-copy h3{margin:0;font-size:clamp(22px,6.65cqw,28px);line-height:1.5;letter-spacing:-.06em;font-weight:800}
+.ht-copy h3 span{font-size:inherit;white-space:nowrap}
+.ht-copy h3 br{display:none}
+.ht-device{position:absolute;left:50%;top:112px;width:60%;max-width:258px;aspect-ratio:1206/2660;padding:5px;border:1px solid #606266;border-radius:32px;background:#181a1c;box-shadow:1px 1px 0 #999,inset 0 0 0 2px #08090a,4px 10px 18px #0000001c;transform:translateX(-50%);transform-origin:50% 0;overflow:hidden}
+.ht-screens{position:relative;overflow:hidden;width:100%;height:100%;border-radius:26px;background:#faf9f7}
+.ht-screens img{display:block;position:absolute;width:100%;height:auto;left:0;top:0}
+.ht-device:after{content:"";position:absolute;top:9px;left:calc(50% - 23px);width:46px;height:12px;border-radius:20px;background:#090a0b;z-index:3}
+.ht-hint{margin:0;padding:12px 20px 15px;font-size:10px;line-height:1.6;color:#777;background:#fff;text-align:center}
+.ht-static{list-style:none;margin:0;padding:0}
+.ht-panel{position:relative;height:120cqw;min-height:390px;max-height:500px;overflow:hidden;isolation:isolate;background:#fff}
+.ht-panel.ht-light{background:var(--orange)}
+/* The semantic list remains available to assistive technology during animation. */
+.howto-story.is-animated{height:auto}
+.is-animated .ht-stage{position:relative;height:100svh;height:100dvh;display:flex;flex-direction:column}
+.is-animated .ht-title{flex:none;padding-top:max(22px,env(safe-area-inset-top))}
+.ht-scroll-track:not(.is-enabled),.ht-scroll-track:not(.is-enabled)>.ht-scroll-content{display:contents}
+.ht-scroll-track.is-enabled{position:relative;height:calc(var(--ht-content-height,1200px) + var(--ht-travel,1600px))}
+.ht-scroll-track.is-enabled>.ht-scroll-content{position:sticky;top:0;display:flow-root}
+.is-animated .ht-motion{display:flex;flex:1;min-height:0;flex-direction:column}
+.is-animated .ht-viewport{flex:1;height:auto;min-height:0;max-height:none}
+.is-animated .ht-motion .ht-device{height:calc(100% - 128px);width:auto;max-width:78%;max-height:none}
+.is-animated .ht-hint{flex:none;padding-bottom:max(15px,env(safe-area-inset-bottom))}
+.is-animated .ht-static{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.ht-copy-layers .ht-copy{opacity:0;transform:translateY(28px);transition:opacity 100ms ease,transform 300ms cubic-bezier(.16,1,.3,1)}
+.ht-copy-layers .ht-copy.is-past{transform:translateY(-18px)}
+.ht-copy-layers .ht-copy.is-active{opacity:1;transform:translateY(0);transition:opacity 260ms ease 110ms,transform 560ms cubic-bezier(.16,1,.3,1) 110ms}
+.ht-screen-layers img{opacity:0;transform:translateY(32px);transition:opacity 100ms ease,transform 300ms cubic-bezier(.16,1,.3,1);will-change:opacity,transform}
+.ht-screen-layers img.is-past{transform:translateY(-20px)}
+.ht-screen-layers img.is-active{opacity:1;transform:translateY(0);transition:opacity 300ms ease 110ms,transform 620ms cubic-bezier(.16,1,.3,1) 110ms}
+@media(max-height:620px){.is-animated .ht-stage{top:0}.ht-title{padding-top:12px}.ht-hint{display:none}}
+@media(prefers-reduced-motion:reduce){.ht-scroll-track.is-enabled,.ht-scroll-track.is-enabled>.ht-scroll-content{display:contents;height:auto;position:static}.howto-story.is-animated{height:auto}.is-animated .ht-stage{position:static;height:auto;display:block}.is-animated .ht-motion{display:none}.is-animated .ht-static{position:static;width:auto;height:auto;overflow:visible;clip-path:none;white-space:normal}.ht-copy-layers .ht-copy,.ht-screen-layers img,.ht-backdrop{transition:none}}

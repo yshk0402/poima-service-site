@@ -1,0 +1,27 @@
+.points-section{padding-top:38px;padding-bottom:42px;scroll-margin-top:0}
+.points-section h2{font-size:clamp(25px,7.2vw,29px);line-height:1.45;letter-spacing:-.055em}
+.reward-heading{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.reward-heading .eyebrow{margin:0}
+.reward-status{font-size:11px;line-height:1.6;color:#60666c}
+.reward-flow{list-style:none;padding:0;margin:24px 0 0;text-align:center}
+.reward-flow>li{display:flex;align-items:center;flex-direction:column}
+.reward-label{font-size:20px;line-height:1.5;font-weight:700;letter-spacing:-.025em}
+.reward-arrow{width:21px;height:21px;transform:rotate(90deg);color:#a3a7ab;margin:14px 0 1px;stroke-width:1.5}
+.eraberu-logo{display:block;width:276px;max-width:100%;height:auto;object-fit:contain}
+.reward-flow>li:nth-child(2) .reward-arrow{margin-top:15px;margin-bottom:17px}
+.reward-choice{font-size:20px;line-height:1.5;letter-spacing:-.025em}
+.reward-minimum{text-align:center;font-size:13px;line-height:1.7;color:#60666c;margin-top:14px}
+.reward-details{margin-top:20px;border-top:1px solid #e4e6e8;border-bottom:1px solid #e4e6e8}
+.reward-details>summary{padding:17px 0;font-size:13px;min-height:56px;line-height:1.6}
+.reward-details-body{padding:0 0 22px;font-size:13px;color:#50575e;line-height:1.85}
+.reward-details-body h3{font-size:15px;color:var(--ink);line-height:1.6;margin:23px 0 8px}
+.reward-details-body p+p{margin-top:10px}
+.reward-method,.reward-notices{padding-left:1.5em;margin:8px 0 0}
+.reward-method li+li,.reward-notices li+li{margin-top:9px}
+.reward-terms{margin:18px 0 0}
+.reward-terms>div+div{margin-top:12px}
+.reward-terms dt{font-weight:600;color:var(--ink)}
+.reward-terms dd{margin:2px 0 0}
+.reward-source,.faq-list p a{color:#a43b00;text-decoration:underline;text-underline-offset:3px}
+.reward-source{display:inline-block;margin-top:18px;min-height:32px}
+.faq-list p a{display:block;margin-top:9px;min-height:32px}

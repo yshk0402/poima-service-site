@@ -64,3 +64,7 @@ dialog.pack-dialog[open]{display:grid;place-items:center}
 body:has(#pack-dialog[open]) .pack-preview-trigger{opacity:0}
 .pack-corner-hint{position:absolute;right:max(24px,env(safe-area-inset-right));bottom:max(24px,env(safe-area-inset-bottom));margin:0;color:#606060;font-size:12px;font-weight:400;line-height:1.6;pointer-events:none}
 .pack-dialog:not([data-phase=sealed]):not([data-phase=resetting]) .pack-corner-hint{display:none}
+
+/* The redesigned page uses an in-flow pack thumbnail. */
+.pack-section .pack-preview-trigger{position:relative;inset:auto;padding:0;width:158px;height:226px;margin:auto}
+.pack-corner-hint{font-size:12px}
